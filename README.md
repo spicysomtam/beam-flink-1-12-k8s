@@ -80,7 +80,7 @@ $ java -cp target/word-count-beam-bundled-0.1.jar \
 
 ## Fink cluster major versions that work with this release of Beam
 
-If you check the kubernetes deployments in the `k8s` folder, you will see older versions of Flink commented out; this was an easy way to test compatibility with the `word-count` example in Beam. Note that the Job manager and Task manager versions should be the same. I have used the latest minor versions where there is an official docker image (official docker image means a good release).
+If you check the kubernetes deployments in the `k8s` folder, you will see older versions of Flink commented out; this was an easy way to test compatibility with the `word-count` example. Note that the Job manager and Task manager versions should be the same. I have used the latest minor versions where there is an official docker image (official docker image means a good release; bad release docker images were probably pulled to discourage use of them).
 
 | Flink version | Compatible? |
 | ------------- | ----------- |
