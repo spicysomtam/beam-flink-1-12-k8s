@@ -6,6 +6,8 @@ Kubernetes cluster setup further down this document.
 
 All of this runs on Linux (Ubuntu, etc).
 
+Apache Beam was 2.28.0 (see [Apache Beam downloads](https://beam.apache.org/get-started/downloads/)).
+
 # Walking through the Beam word-count example
 
 This is all java 8 (openjdk worked for me; probably Oracle jdk will work fine).
@@ -75,6 +77,19 @@ $ java -cp target/word-count-beam-bundled-0.1.jar \
   --inputFile=/etc/passwd \
   --output=/tmp/count
 ```
+
+## Fink cluster major versions that work with this release of Beam
+
+If you check the kubernetes deployments in the `k8s` folder, you will see older versions of Flink commented out; this was an easy way to test compatibility with the `word-count` example in Beam. Note that the Job manager and Task manager versions should be the same. I have used the latest minor versions where there is an official docker image (official docker image means a good release).
+
+| Flink version | Compatible? |
+| ------------- | ----------- |
+| 1.12.2        | yes         |
+| 1.11.3        | yes         |
+| 1.10.3        | no          |
+| 1.9.3         | no          |
+| 1.8.1         | no          |
+
 
 # Flink kubernetes standalone session cluster setup
 
