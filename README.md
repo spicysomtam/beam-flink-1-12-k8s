@@ -2,7 +2,7 @@
 
 Combine Apache Beam with an Apache Flink runner and cluster (kubernetes) using examples from both websites. 
 
-Kubernetes cluster setup further down this document.
+Kubernetes cluster setup further down this document; you can easily spin up a small kubernetes cluster in docker for testing on your pc.
 
 All of this runs on Linux (Ubuntu, etc).
 
@@ -80,15 +80,15 @@ $ java -cp target/word-count-beam-bundled-0.1.jar \
 
 ## Fink cluster major versions that work with this release of Beam
 
-If you check the kubernetes deployments in the `k8s` folder, you will see older versions of Flink commented out; this was an easy way to test compatibility with the `word-count` example. Note that the Job manager and Task manager versions should be the same. I have used the latest minor versions where there is an official docker image (official docker image means a good release; bad release docker images were probably pulled to discourage use of them).
+If you check the kubernetes deployments in the `k8s` folder, you will see older versions of Flink commented out; this was an easy way to test compatibility with the `word-count` example. Note that the Job manager and Task manager versions should be the same. I have used the latest minor versions where there is an official docker image (official docker image means a good release; bad release docker images were probably pulled to discourage use of them). Highest Beam version that works with a Flink version is the major .0 release (eg 2.16.0).
 
-| Flink version | Compatible? |
-| ------------- | ----------- |
-| 1.12.2        | yes         |
-| 1.11.3        | yes         |
-| 1.10.3        | no          |
-| 1.9.3         | no          |
-| 1.8.1         | no          |
+| Flink version | Compatible? | Highest Beam version that works|
+| ------------- | ----------- | ------------------------------ |
+| 1.12.2        | yes         | 2.28.0 (current)               |
+| 1.11.3        | yes         | 2.28.0 (current)               |
+| 1.10.3        | no          | 2.27.0                         |
+| 1.9.3         | no          | 2.20.0                         |
+| 1.8.1         | no          | 2.16.0                         |
 
 
 # Flink kubernetes standalone session cluster setup
